@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserProfil extends Model
 {
     // use HasFactory;
-    protected $table = 'user_profil';
+    protected $table = 'user_profile';
     protected $primaryKey = 'id_profil';
     public $incrementing = 'true';
     public $timestamps = false;
@@ -20,6 +20,6 @@ class UserProfil extends Model
     ];
 
     public function opd() {
-        return $this->belongsTo(Opd::class, 'id_opd', 'id_opd');
+        return $this->belongsTo(OPD::class, 'id_opd', 'id_opd');
     }
 }
