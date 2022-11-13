@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Wilayah;
+use App\Models\Tenant;
+use App\Models\OPD;
 
 class DatabaseSeeder extends Seeder
 {
@@ -44,5 +46,7 @@ class DatabaseSeeder extends Seeder
             'level' => 4,
             'id_parent' => 3,
         ]);
+        Tenant::factory(10)->create();
+        OPD::factory(10)->create();
     }
 }
