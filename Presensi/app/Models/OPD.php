@@ -9,6 +9,14 @@ class OPD extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nama_opd',
+        'id_wilayah',
+        'longitude',
+        'latitude',
+        'id_tenant'
+    ];
+
     protected $table = "opd";
     public $timestamps = false;
 }
