@@ -10,7 +10,6 @@
     <meta content="" name="keywords">
 
     @include('includes.style')
-    
 </head>
 
 <body>
@@ -18,7 +17,7 @@
     @include('includes.topbar')
 
     {{-- sidebar --}}
-    @include('includes.sidebar')
+    @include('includes.admin.sidebarAdmin')
 
     {{-- konten --}}
     <main id="main" class="main">

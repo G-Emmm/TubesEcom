@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\Admin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +14,11 @@ use App\Http\Controllers\User\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::prefix('admin')
+    ->namespace('App\Http\Controllers\Admin')
+    ->group(function(){
+        Route::get('/', 'HomeAdminController@index')
+        ->name('homeadmin');
+    });
+
+Route::get('/home', [HomeController::class, 'index']);
