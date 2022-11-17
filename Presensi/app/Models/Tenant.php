@@ -11,4 +11,15 @@ class Tenant extends Model
 
     protected $table = "tenant";
     public $timestamps = false;
+    protected $primaryKey = 'id_tenant';
+    public $incrementing = 'true';
+
+    protected $fillable = [
+        'id_wilayah',
+        'alamat_tent',
+        'no_telptent'
+    ];
+    public function wilayah() {
+        return $this->belongsTo(Wilayah::class, 'id_wilayah', 'id_wilayah');
+    }
 }

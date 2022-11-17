@@ -9,6 +9,11 @@ class OPD extends Model
 {
     use HasFactory;
 
+    protected $table = "opd";
+    public $timestamps = false;
+    protected $primaryKey = 'id_opd';
+    public $incrementing = 'true';
+
     protected $fillable = [
         'nama_opd',
         'id_wilayah',
@@ -17,6 +22,12 @@ class OPD extends Model
         'id_tenant'
     ];
 
-    protected $table = "opd";
-    public $timestamps = false;
+    public function wilayah() {
+        return $this->belongsTo(Wilayah::class, 'id_wilayah', 'id_wilayah');
+    }
+    public function tenant(){
+        return $this->belongsTo(Tenant::class, 'id_tenant', 'id_tenant');
+    }
+
+
 }
