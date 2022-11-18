@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
 
+use App\Http\Controllers\User\PerizinanUserController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +23,13 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('/subs', 'HomeAdminController@index')
         ->name('homeadmin');
+        Route::get('/tenant', 'TenantController@index')
+        ->name('tenant');
     });
 
 Route::get('/home', [HomeController::class, 'index']);
+
+Route::prefix('perizinan')->name('perizinan.')->group(function () {
+    Route::get('/', [PerizinanUserController::class, 'index'])->name('index');
+    
+});
