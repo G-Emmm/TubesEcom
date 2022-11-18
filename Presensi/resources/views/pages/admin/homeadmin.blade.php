@@ -16,10 +16,10 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Start Date</th>
+                        <th scope="col">Wilayah</th>
+                        <th scope="col">Tanggal Awal</th>
+                        <th scope="col">Tanggal Akhir</th>
+                        <th scope="col">Paket</th>
                       </tr>
                     </thead>
                     <tbody>

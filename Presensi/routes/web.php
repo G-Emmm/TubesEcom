@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,12 @@ Route::prefix('admin')
         ->name('homeadmin');
     });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::prefix('user')
+    ->namespace('App\Http\Controllers\User')
+    ->group(function(){
+        Route::get('/home', 'HomeController@index')
+        ->name('home');
+    });
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
