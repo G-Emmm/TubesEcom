@@ -31,5 +31,7 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::get('/', [PerizinanUserController::class, 'index'])->name('index');
+    Route::get('/create', [PerizinanUserController::class, 'create'])->name('create');
+    Route::post('/store', [PerizinanUserController::class,'store'])->name('store');
     
 });

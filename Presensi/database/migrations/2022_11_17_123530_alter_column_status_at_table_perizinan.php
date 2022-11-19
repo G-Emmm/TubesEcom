@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('perizinan', function (Blueprint $table) {
-            $table->integer('status')->unsigned()->change();
+            $table->integer('status')->default('1')->change();
         });
     }
 

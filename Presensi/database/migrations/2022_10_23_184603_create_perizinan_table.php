@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('perizinan', function (Blueprint $table) {
             $table->bigIncrements('id_perizinan');
-            $table->unsignedBigInteger('id_profil');
+            $table->unsignedBigInteger('id_profil')->nullable();
             $table->date('start_izin');
             $table->date('end_izin');
             $table->string('jenis_izin');

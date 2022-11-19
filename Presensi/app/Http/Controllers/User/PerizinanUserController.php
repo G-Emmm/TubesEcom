@@ -29,7 +29,7 @@ class PerizinanUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.user.perizinan.create');
     }
 
     /**
@@ -40,7 +40,24 @@ class PerizinanUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'start_izin' => 'required',
+            'end_izin' => 'required',
+            'jenis_izin' => 'required',
+            'keperluan' => 'required',
+            'keterangan' =>'required'
+        ]);
+
+        $perizinan = new Perizinan;
+        $perizinan->start_izin = $request->input('start_izin');
+        $perizinan->end_izin = $request->input('end_izin');
+        $perizinan->jenis_izin = $request->input('jenis_izin');
+        $perizinan->keperluan = $request->input('keperluan');
+        $perizinan->keterangan = $request->input('keterangan');
+
+        $perizinan->save();
+
+        return redirect(route('perizinan.index'));
     }
 
     /**

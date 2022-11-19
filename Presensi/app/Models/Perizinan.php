@@ -11,7 +11,7 @@ class Perizinan extends Model
     protected $table = 'perizinan';
     protected $primaryKey = 'id_perizinan';
     public $incrementing = 'true';
-    //public $timestamps = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'id_profil',
@@ -20,6 +20,5 @@ class Perizinan extends Model
         'jenis_izin',
         'keperluan',
         'keterangan',
-        'status'
     ];
 }
