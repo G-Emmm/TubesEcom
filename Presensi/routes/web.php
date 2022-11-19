@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 use App\Http\Controllers\User\PerizinanUserController;
 
@@ -35,3 +36,12 @@ Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::post('/store', [PerizinanUserController::class,'store'])->name('store');
     
 });
+Route::prefix('user')
+    ->namespace('App\Http\Controllers\User')
+    ->group(function(){
+        Route::get('/home', 'HomeController@index')
+        ->name('home');
+    });
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
