@@ -100,8 +100,11 @@ class PerizinanUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_perizinan)
     {
-        //
+        $perizinan = Perizinan::find($id_perizinan);
+        $perizinan->delete();
+
+        return redirect(route('perizinan.index'));
     }
 }

@@ -21,7 +21,8 @@
                         <th scope="col">Keterangan</th>
                         <th scope="col">Tanggal Mulai</th>
                         <th scope="col">Tanggal Akhir</th>
-                        <th scope="col">Status</th>
+                        <th scope="col" >Status</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -42,6 +43,20 @@
                                         Ditolak
                                     @endif
                                 
+                                </td>
+                                <td>
+                                    <div class="icon" style="display: flex;">
+                                        <form action="{{route('perizinan.destroy', $item->id_perizinan)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="bi bi-trash" type="submit"></button>
+                                        </form>
+                                        <form action="{{route('perizinan.destroy', $item->id_perizinan)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="ri-edit-2-line" type="submit"></button>
+                                        </form>
+                                      </div>
                                 </td>
                             </tr>
                         @endforeach

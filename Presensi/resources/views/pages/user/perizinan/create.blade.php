@@ -1,17 +1,17 @@
 @extends('layout.admin')
 
 @section('konten')
-<div class="pagetitle">
+{{-- <div class="pagetitle">
     <h1>Mengajukan Perizinan</h1>
-</div><!-- End Page Title -->
+</div><!-- End Page Title --> --}}
 
-<section class="section">
+<section class="section dashboard">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-12">
 
-        {{-- <div class="card">
+        <div class="card">
           <div class="card-body">
-            <h5 class="card-title">General Form Elements</h5> --}}
+            <h5 class="card-title">Mengajukan Perizinan</h5>
 
             <!-- General Form Elements -->
             <form action="{{route('perizinan.store')}}" method="POST">
@@ -49,10 +49,10 @@
               </div>
               {{-- <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Submit Button</label> --}}
-                <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary">Kirim</button>
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-primary" style="float: right;">Kirim</button>
                 </div>
-              {{-- </div> --}}
+              </div>
 
             </form><!-- End General Form Elements -->
 

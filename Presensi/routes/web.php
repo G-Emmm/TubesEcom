@@ -34,7 +34,7 @@ Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::get('/', [PerizinanUserController::class, 'index'])->name('index');
     Route::get('/create', [PerizinanUserController::class, 'create'])->name('create');
     Route::post('/store', [PerizinanUserController::class,'store'])->name('store');
-    
+    Route::delete('/delete/{id}',[PerizinanUserController::class, 'destroy'])->name('destroy');
 });
 Route::prefix('user')
     ->namespace('App\Http\Controllers\User')
