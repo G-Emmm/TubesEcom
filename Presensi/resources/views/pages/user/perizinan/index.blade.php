@@ -49,12 +49,12 @@
                                         <form action="{{route('perizinan.destroy', $item->id_perizinan)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="bi bi-trash" type="submit"></button>
+                                            <button class="bi bi-trash" type="submit" style="border: none; background:none;"></button>
                                         </form>
-                                        <form action="{{route('perizinan.destroy', $item->id_perizinan)}}" method="POST">
+                                        <form action="{{route('perizinan.edit', $item->id_perizinan)}}" method="GET">
                                             @csrf
-                                            @method('DELETE')
-                                            <button class="ri-edit-2-line" type="submit"></button>
+                                            @method('GET')
+                                            <button class="ri-edit-2-line" type="submit" style="border: none; background:none;"></button>
                                         </form>
                                       </div>
                                 </td>
