@@ -26,6 +26,8 @@ Route::prefix('admin')
         ->name('homeadmin');
         Route::get('/tenant', 'TenantController@index')
         ->name('tenant');
+        Route::get('/opd', 'OpdController@index')
+        ->name('opd');
     });
 
 Route::get('/home', [HomeController::class, 'index']);

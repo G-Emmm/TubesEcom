@@ -15,6 +15,12 @@
                         ></i>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/opd">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>OPD</span><i
+                        ></i>
+                </a>
+            </li>
             
         </ul>
 
