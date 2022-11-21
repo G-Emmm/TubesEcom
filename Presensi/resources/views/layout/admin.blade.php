@@ -14,7 +14,7 @@
 
 <body>
     {{-- topbar --}}
-    @include('includes.topbar')
+    @include('includes.admin.topbarAdmin')
 
     {{-- sidebar --}}
     @include('includes.admin.sidebarAdmin')

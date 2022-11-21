@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
 use App\Http\Controllers\User\PerizinanUserController;
-
-
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +20,7 @@ use App\Http\Controllers\User\PerizinanUserController;
 
 Route::prefix('admin')
     ->namespace('App\Http\Controllers\Admin')
+    ->middleware(['auth', 'admin'])
     ->group(function(){
         Route::get('/subs', 'HomeAdminController@index')
         ->name('homeadmin');
@@ -30,7 +30,8 @@ Route::prefix('admin')
         ->name('opd');
     });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
 Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::get('/', [PerizinanUserController::class, 'index'])->name('index');
@@ -40,6 +41,7 @@ Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::get('/edit/{id}',[PerizinanUserController::class, 'edit'])->name('edit');
     Route::put('/update/{id}',[PerizinanUserController::class, 'update'])->name('update');
 });
+
 Route::prefix('user')
     ->namespace('App\Http\Controllers\User')
     ->group(function(){
@@ -49,3 +51,5 @@ Route::prefix('user')
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
+
+Auth::routes();
