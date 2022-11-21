@@ -28,7 +28,7 @@ Route::prefix('admin')
         ->name('tenant');
     });
 
-Route::get('/home', [HomeController::class, 'index'])
+Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
 Route::prefix('perizinan')->name('perizinan.')->group(function () {
