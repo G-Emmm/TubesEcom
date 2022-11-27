@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Perizinan;
 use Illuminate\Support\Facades\DB;
+// use App\Http\Controllers\Admin\DateTime;
+
+use DateTime;
 
 class PerizinanAdminController extends Controller
 {
@@ -98,12 +101,19 @@ class PerizinanAdminController extends Controller
         $perizinan->save();
 
         if ($perizinan->status == 2) {
-            DB::table('presensi')->insert([
+            $begin = new DateTime($perizinan->start_izin);
+            $end = new DateTime($perizinan->end_izin);
+
+            for ($i=$begin; $i <= $end; $i->modify('+1 day')) { 
+                DB::table('presensi')->insert([
                 'id_profil' => $perizinan->id_profil,
+                'tanggal' => $i,
                 'keterangan' => 'IZIN'
             ]);
+            }
+
             
-            ;
+            
         }
 
         return redirect(route('perizinanAdmin.index'));
