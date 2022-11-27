@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\User\PerizinanUserController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\PerizinanAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,17 @@ Route::prefix('admin')
         ->name('tenant');
         Route::get('/opd', 'OpdController@index')
         ->name('opd');
+        Route::prefix('perizinanAdmin')->name('perizinanAdmin.')->group(function(){
+            Route::get('/',[PerizinanAdminController::class, 'index'])->name('index');
+            Route::get('/edit/{id}',[PerizinanAdminController::class, 'edit'])->name('edit');
+            Route::put('/update/{id}',[PerizinanAdminController::class, 'update'])->name('update');
+        });
     });
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
-Route::prefix('perizinan')->name('perizinan.')->group(function () {
+Route::prefix('perizinan')->name('perizinan.')->middleware('auth')->group(function () {
     Route::get('/', [PerizinanUserController::class, 'index'])->name('index');
     Route::get('/create', [PerizinanUserController::class, 'create'])->name('create');
     Route::post('/store', [PerizinanUserController::class,'store'])->name('store');
