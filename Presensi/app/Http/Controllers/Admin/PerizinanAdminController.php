@@ -97,6 +97,15 @@ class PerizinanAdminController extends Controller
 
         $perizinan->save();
 
+        if ($perizinan->status == 2) {
+            DB::table('presensi')->insert([
+                'id_profil' => $perizinan->id_profil,
+                'keterangan' => 'IZIN'
+            ]);
+            
+            ;
+        }
+
         return redirect(route('perizinanAdmin.index'));
     }
 
