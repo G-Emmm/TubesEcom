@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Perizinan;
+use Illuminate\Support\Facades\Auth;
 
 class PerizinanUserController extends Controller
 {
@@ -41,6 +42,7 @@ class PerizinanUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            // 'id_profil' => 'required',
             'start_izin' => 'required',
             'end_izin' => 'required',
             'jenis_izin' => 'required',
@@ -49,6 +51,7 @@ class PerizinanUserController extends Controller
         ]);
 
         $perizinan = new Perizinan;
+        $perizinan->id_profil = Auth::id();
         $perizinan->start_izin = $request->input('start_izin');
         $perizinan->end_izin = $request->input('end_izin');
         $perizinan->jenis_izin = $request->input('jenis_izin');

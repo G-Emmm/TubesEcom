@@ -20,5 +20,10 @@ class Perizinan extends Model
         'jenis_izin',
         'keperluan',
         'keterangan',
+        'status'
     ];
+
+    public function profil(){
+        return $this->belongsTo(User::class, 'id', 'id_profil');
+    }
 }

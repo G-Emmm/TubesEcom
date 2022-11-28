@@ -20,6 +20,7 @@ class Presensi extends Model
         'jam_pulang',
         'longitude',
         'latitude',
+        'keterangan'
     ];
 
     public function profil() {

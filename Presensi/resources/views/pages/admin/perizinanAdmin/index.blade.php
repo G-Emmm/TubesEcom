@@ -16,6 +16,7 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">Jenis Izin</th>
                         <th scope="col">Keperluan</th>
                         <th scope="col">Keterangan</th>
@@ -29,6 +30,7 @@
                         @foreach ($perizinan as $item)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
+                                <td>{{$item->name}}</td>
                                 <td>{{$item->jenis_izin}}</td>
                                 <td>{{$item->keperluan}}</td>
                                 <td>{{$item->keterangan}}</td>
@@ -45,20 +47,12 @@
                                 
                                 </td>
                                 <td>
-                                    @if($item->status == 1)
-                                        <div class="icon" style="display: flex;">
-                                            <form action="{{route('perizinan.destroy', $item->id_perizinan)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="bi bi-trash" type="submit" style="border: none; background:none;"></button>
-                                            </form>
-                                            <form action="{{route('perizinan.edit', $item->id_perizinan)}}" method="GET">
-                                                @csrf
-                                                @method('GET')
-                                                <button class="ri-edit-2-line" type="submit" style="border: none; background:none;"></button>
-                                            </form>
-                                        @else
-                                        @endif
+                                    <div class="icon" style="display: flex;">
+                                        <form action="{{route('perizinanAdmin.edit', $item->id_perizinan)}}" method="GET">
+                                            @csrf
+                                            @method('GET')
+                                            <button class="ri-edit-2-line" type="submit" style="border: none; background:none;"></button>
+                                        </form>
                                       </div>
                                 </td>
                             </tr>

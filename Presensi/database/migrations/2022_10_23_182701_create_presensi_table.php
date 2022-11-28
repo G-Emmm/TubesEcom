@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('presensi', function (Blueprint $table) {
             $table->bigIncrements('id_presensi');
             $table->unsignedBigInteger('id_profil');
-            $table->date('tanggal');
-            $table->time('jam_datang');
-            $table->time('jam_pulang');
-            $table->double('longitude');
-            $table->double('latitude');
+            $table->date('tanggal')->nullable();
+            $table->time('jam_datang')->nullable();
+            $table->time('jam_pulang')->nullable();
+            $table->double('longitude')->nullable();
+            $table->double('latitude')->nullable();
+            $table->string('keterangan')->nullable();
             
             $table->foreign('id_profil')->references('id_profil')->on('user_profile');            
         });
