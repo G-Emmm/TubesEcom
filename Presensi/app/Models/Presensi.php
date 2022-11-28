@@ -12,6 +12,12 @@ class Presensi extends Model
     public $timestamps = false;
     protected $primaryKey = 'id_presensi';
     public $incrementing = 'true';
+    const KETERANGAN = [
+        'Hadir',
+        'Sakit',
+        'Izin',
+        'Cuti'
+    ];
 
     protected $fillable = [
         'id_profil',
@@ -22,6 +28,12 @@ class Presensi extends Model
         'latitude',
         'keterangan'
     ];
+
+    public static function getTodayPresensi($id_profil){
+        $tanggal = date('Y-m-d');
+        $presensi = Presensi::where('id_profil', $id_profil)->where('tanggal', $tanggal)->first();
+        return $presensi;
+    }
 
     public function profil() {
         return $this->belongsTo(UserProfil::class, 'id_profil', 'id_profil');
