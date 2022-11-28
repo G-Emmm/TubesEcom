@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\User\PerizinanUserController;
+use App\Http\Controllers\User\PresensiController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +41,12 @@ Route::prefix('perizinan')->name('perizinan.')->group(function () {
     Route::delete('/delete/{id}',[PerizinanUserController::class, 'destroy'])->name('destroy');
     Route::get('/edit/{id}',[PerizinanUserController::class, 'edit'])->name('edit');
     Route::put('/update/{id}',[PerizinanUserController::class, 'update'])->name('update');
+});
+
+Route::prefix('presensi')->name('presensi.')->group(function () {
+    Route::get('/', [PresensiController::class, 'index'])->name('index');
+    Route::get('/create', [PresensiController::class, 'create'])->name('create');
+    Route::post('/store', [PresensiController::class,'store'])->name('store');
 });
 
 Route::prefix('user')
