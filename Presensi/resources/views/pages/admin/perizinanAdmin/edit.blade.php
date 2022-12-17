@@ -54,6 +54,12 @@
                 </div>
               </div>
               <div class="row mb-3">
+                <label for="file" class="col-sm-2 col-form-label">File</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" name="file" id="file" value="{{$perizinan->file}}" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Select</label>
                 <div class="col-sm-10">
                   <select class="form-select" aria-label="Default select example" name="status" id="status">

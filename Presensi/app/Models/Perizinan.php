@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Perizinan extends Model
 {
     //use HasFactory;
@@ -20,7 +21,8 @@ class Perizinan extends Model
         'jenis_izin',
         'keperluan',
         'keterangan',
-        'status'
+        'status',
+        'file',
     ];
 
     public function profil(){

@@ -47,10 +47,16 @@
                     <textarea class="form-control" style="height: 100px" name="keterangan" id="keterangan" >{{$perizinan->keterangan}}</textarea>
                 </div>
               </div>
+              <div class="row mb-3">
+                <label for="file" class="col-sm-2 col-form-label">Upload file</label>
+                <div class="col-sm-10">
+                  <input type="file" name="file" id="file" class="form-control" value="{{$perizinan->file}}">
+                </div>
+              </div>
               {{-- <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Submit Button</label> --}}
                 <div class="col-sm-12">
-                  <button type="submit" class="btn btn-primary" style="float: right;">Kirim</button>
+                  <button type="submit" class="btn btn-primary" style="float: right;">Simpan</button>
                 </div>
               </div>
 

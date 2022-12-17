@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('keperluan');
             $table->text('keterangan');
             $table->boolean('status');
+            $table->string('file');
 
             $table->foreign('id_profil')->references('id_profil')->on('user_profile');
         });

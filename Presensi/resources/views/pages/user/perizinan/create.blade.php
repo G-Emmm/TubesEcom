@@ -32,7 +32,11 @@
               <div class="row mb-3">
                 <label for="jenis_izin" class="col-sm-2 col-form-label">Jenis Izin</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="jenis_izin" id="jenis_izin">
+                  <select class="form-select" aria-label="Default select example" name="jenis_izin" id="jenis_izin">
+                  <option value="izin">Izin</option>
+                  <option value="sakit">Sakit</option>
+                  <option value="cuti">Cuti</option>
+                  </select>
                 </div>
               </div>
               <div class="row mb-3">
@@ -45,6 +49,12 @@
                 <label for="keterangan" class="col-sm-2 col-form-label">Keterangan</label>
                 <div class="col-sm-10">
                     <textarea class="form-control" style="height: 100px" name="keterangan" id="keterangan"></textarea>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="file" class="col-sm-2 col-form-label">Upload file</label>
+                <div class="col-sm-10">
+                  <input type="file" name="file" id="file" class="form-control">
                 </div>
               </div>
               {{-- <div class="row mb-3">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Perizinan;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,7 +48,8 @@ class PerizinanUserController extends Controller
             'end_izin' => 'required',
             'jenis_izin' => 'required',
             'keperluan' => 'required',
-            'keterangan' =>'required'
+            'keterangan' =>'required',
+            'file' => 'required',
         ]);
 
         $perizinan = new Perizinan;
@@ -57,6 +59,8 @@ class PerizinanUserController extends Controller
         $perizinan->jenis_izin = $request->input('jenis_izin');
         $perizinan->keperluan = $request->input('keperluan');
         $perizinan->keterangan = $request->input('keterangan');
+        $perizinan->file = $request->input('file');
+
 
         $perizinan->save();
 
@@ -103,7 +107,8 @@ class PerizinanUserController extends Controller
             'end_izin' => 'required',
             'jenis_izin' => 'required',
             'keperluan' => 'required',
-            'keterangan' =>'required'
+            'keterangan' =>'required',
+            'file' => 'required',
         ]);
 
         $perizinan = Perizinan::find($id_perizinan);
@@ -112,6 +117,7 @@ class PerizinanUserController extends Controller
         $perizinan->jenis_izin = $request->input('jenis_izin');
         $perizinan->keperluan = $request->input('keperluan');
         $perizinan->keterangan = $request->input('keterangan');
+        $perizinan->file = $request->input('file');
 
         $perizinan->save();
 
