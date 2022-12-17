@@ -79,12 +79,12 @@
                                 <br>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <a href="/perizinan">
+                                        <a href="/user/rekap">
                                             <i class="bi bi-pie-chart"></i>
                                         </a>
                                     </div>
                                     <div class="ps-3">
-                                        <a href="/perizinan">
+                                        <a href="/user/rekap">
                                             <span class="text-muted pt-2 ps-1">Rekap Presensi</span>
                                         </a>
                                     </div>
