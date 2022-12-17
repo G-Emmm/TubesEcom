@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.user')
 
 @section('konten')
 <div class="pagetitle">
