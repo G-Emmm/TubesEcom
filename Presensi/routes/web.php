@@ -51,15 +51,15 @@ Route::prefix('perizinan')->name('perizinan.')->middleware('auth')->group(functi
 
 Route::prefix('presensi')->name('presensi.')->group(function () {
     Route::get('/', [PresensiController::class, 'index'])->name('index');
-    Route::get('/create', [PresensiController::class, 'create'])->name('create');
     Route::post('/store', [PresensiController::class,'store'])->name('store');
 });
 
-Route::prefix('user')
-    ->namespace('App\Http\Controllers\User')
+Route::prefix('user')->namespace('App\Http\Controllers\User')
     ->group(function(){
-        Route::get('/home', 'HomeController@index')
-        ->name('home');
+        Route::get('/home', 'HomeUserController@index')->name('homeuser');
+        Route::post('/storePresensi', 'HomeUserController@storePresensi')->name('storePresensi');
+        Route::post('/storeSakit', 'HomeUserController@storeSakit')->name('storeSakit');
+        Route::post('/rekap', 'HomeUserController@rekap')->name('rekap'); 
     });
 
 Route::get('/login', [LoginController::class, 'index']);
