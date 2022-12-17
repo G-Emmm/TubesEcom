@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Jadwal;
 use Illuminate\Http\Request;
 use App\Models\Presensi;
 use App\Models\UserProfil;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,8 +16,12 @@ class HomeUserController extends Controller
     public function index()
     {
         $presensi = Presensi::getTodayPresensi(Auth::id());
+        $profil = UserProfil::where('id_profil', Auth::id())->first();
+        $opd = $profil->opd;
+        $jadwal = Jadwal::getTodayjadwal($opd->id_opd);
         return view('pages.user.homeuser', [
-            'presensi' => $presensi
+            'presensi' => $presensi,
+            'jadwal' => $jadwal
         ]);
     }
 
@@ -47,12 +53,15 @@ class HomeUserController extends Controller
 
         $profil = UserProfil::where('id_profil', $id_profil)->first();
         $opd = $profil->opd;
+        $id_opd = $profil->id_opd;
         $opd_long = $opd->longitude;
         $opd_lat = $opd->latitude;
         $long = $request->input('longitude');
         $lat = $request->input('latitude');
         $jarak = $this->distance($opd_lat, $opd_long, $lat, $long);
-        if ($jarak > 0.5) {
+        $setting = Setting::where('id_opd', $id_opd)->first();
+        $max = $setting->batas_jarak_presensi;
+        if ($jarak > $max) {
             return redirect()->back()->with('error', 'Anda tidak berada di lokasi kerja. Jarak anda dengan lokasi kerja adalah ' . $jarak . ' km');
         }
         $presensi = new Presensi;
