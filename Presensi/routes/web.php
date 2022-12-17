@@ -59,7 +59,7 @@ Route::prefix('user')->namespace('App\Http\Controllers\User')
         Route::get('/home', 'HomeUserController@index')->name('homeuser');
         Route::post('/storePresensi', 'HomeUserController@storePresensi')->name('storePresensi');
         Route::post('/storeSakit', 'HomeUserController@storeSakit')->name('storeSakit');
-        Route::post('/rekap', 'HomeUserController@rekap')->name('rekap'); 
+        Route::get('/rekap', 'RekapController@index')->name('rekap'); 
     });
 
 Route::get('/login', [LoginController::class, 'index']);
