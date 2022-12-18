@@ -4,21 +4,9 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="/admin/subs">
-                    <i class="bi bi-wallet"></i>
-                    <span>Tabel Subscription</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Tenant</span><i
-                        ></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/opd">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>OPD</span><i
-                        ></i>
+                <a class="nav-link " href="/user/home">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
                 </a>
             </li>
             

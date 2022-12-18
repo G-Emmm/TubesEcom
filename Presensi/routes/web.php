@@ -24,7 +24,7 @@ Route::prefix('admin')
     ->namespace('App\Http\Controllers\Admin')
     ->middleware(['auth', 'admin'])
     ->group(function(){
-        Route::get('/subs', 'HomeAdminController@index')
+        Route::get('/', 'HomeAdminController@index')
         ->name('homeadmin');
         Route::get('/tenant', 'TenantController@index')
         ->name('tenant');
