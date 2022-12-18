@@ -34,6 +34,12 @@ class Jadwal extends Model
         }
     }
 
+    public static function getJadwal($id_opd)
+    {
+        $jadwal = Jadwal::where('id_opd', $id_opd)->get();
+        return $jadwal;
+    }
+
     public function opd()
     {
         return $this->belongsTo(OPD::class, 'id_opd', 'id_opd');

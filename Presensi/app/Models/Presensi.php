@@ -35,6 +35,11 @@ class Presensi extends Model
         return $presensi;
     }
 
+    public static function getPresensi($id_profil){
+        $presensi = Presensi::where('id_profil', $id_profil)->get();
+        return $presensi;
+    }
+
     public function profil() {
         return $this->belongsTo(UserProfil::class, 'id_profil', 'id_profil');
     }
