@@ -16,13 +16,13 @@
                         <div class="card info-card sales-card">
                             <div class="card-body">
                                 <h5 class="card-title">Presensi</h5>
-                                <br>
                                 <div class="d-flex align-items-center">
                                     <div class="ps-3 col text-center">
                                         {{-- show button only if $jadwal is present --}}
                                         @if (isset($jadwal))
                                             {{-- show a button only if $presensi not present --}}
                                             @if (!isset($presensi))
+                                                <br>
                                                 <form id="form-presensi" action="{{ route('storePresensi') }}"
                                                     method="POST">
                                                     @csrf
@@ -33,6 +33,7 @@
                                                     <button id="submit-button" type="submit"
                                                         class="btn btn-primary">Presensi</button>
                                                 </form>
+                                                <br>
                                                 <script>
                                                     // disable submit button if geolocation is disabled
                                                     if (!navigator.geolocation) {
@@ -92,7 +93,6 @@
                                         @endif --}}
                                     {{-- </div> --}}
                                 </div>
-                                <br>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <a href="/user/rekap">

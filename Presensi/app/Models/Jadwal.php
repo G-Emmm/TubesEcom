@@ -20,14 +20,22 @@ class Jadwal extends Model
         'jam_akhir_presensi'
     ];
 
-    public static function getTodayjadwal($id_opd){
+    public static function getTodayjadwal($id_opd)
+    {
         // get day from date
         $hari = date('w');
+        $jam = date('H:i:s');
         $jadwal = Jadwal::where('id_opd', $id_opd)->where('hari_presensi', $hari)->first();
-        return $jadwal;
+        // check if the time is in the range of the schedule
+        if ($jadwal) {
+            if ($jam >= $jadwal->jam_awal_presensi && $jam <= $jadwal->jam_akhir_presensi) {
+                return $jadwal;
+            }
+        }
     }
 
-    public function opd() {
+    public function opd()
+    {
         return $this->belongsTo(OPD::class, 'id_opd', 'id_opd');
     }
 }
