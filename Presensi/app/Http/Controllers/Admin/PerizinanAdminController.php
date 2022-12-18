@@ -77,7 +77,7 @@ class PerizinanAdminController extends Controller
             ->select('perizinan.*', 'users.name')
             ->first();
             
-        return view('pages.admin.perizinanAdmin.edit',[
+        return view('pages.admin.perizinanAdmin.edit', [
             'perizinan' => $perizinan,
         ]);
     }
