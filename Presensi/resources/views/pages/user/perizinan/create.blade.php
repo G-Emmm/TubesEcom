@@ -33,9 +33,9 @@
                 <label for="jenis_izin" class="col-sm-2 col-form-label">Jenis Izin</label>
                 <div class="col-sm-10">
                   <select class="form-select" aria-label="Default select example" name="jenis_izin" id="jenis_izin">
-                  <option value="izin">Izin</option>
-                  <option value="sakit">Sakit</option>
-                  <option value="cuti">Cuti</option>
+                  <option value="Izin">Izin</option>
+                  <option value="Sakit">Sakit</option>
+                  <option value="Cuti">Cuti</option>
                   </select>
                 </div>
               </div>

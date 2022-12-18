@@ -34,6 +34,7 @@ Route::prefix('admin')
             Route::get('/',[PerizinanAdminController::class, 'index'])->name('index');
             Route::get('/edit/{id}',[PerizinanAdminController::class, 'edit'])->name('edit');
             Route::put('/update/{id}',[PerizinanAdminController::class, 'update'])->name('update');
+            Route::get('/detail/{id}',[PerizinanAdminController::class, 'show'])->name('show');
         });
     });
 
@@ -47,6 +48,7 @@ Route::prefix('perizinan')->name('perizinan.')->middleware('auth')->group(functi
     Route::delete('/delete/{id}',[PerizinanUserController::class, 'destroy'])->name('destroy');
     Route::get('/edit/{id}',[PerizinanUserController::class, 'edit'])->name('edit');
     Route::put('/update/{id}',[PerizinanUserController::class, 'update'])->name('update');
+    Route::get('/detail/{id}',[PerizinanUserController::class, 'show'])->name('show');
 });
 
 Route::prefix('presensi')->name('presensi.')->group(function () {

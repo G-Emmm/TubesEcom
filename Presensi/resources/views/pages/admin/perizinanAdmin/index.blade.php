@@ -18,8 +18,6 @@
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Jenis Izin</th>
-                        <th scope="col">Keperluan</th>
-                        <th scope="col">Keterangan</th>
                         <th scope="col">Tanggal Mulai</th>
                         <th scope="col">Tanggal Akhir</th>
                         <th scope="col" >Status</th>
@@ -32,28 +30,35 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->jenis_izin}}</td>
-                                <td>{{$item->keperluan}}</td>
-                                <td>{{$item->keterangan}}</td>
                                 <td>{{$item->start_izin}}</td>
                                 <td>{{$item->end_izin}}</td>
                                 <td>
                                     @if ($item->status == 1 )
-                                        Dalam Proses
+                                        <p style="background-color: grey; width:60%; text-align:center; border-radius: 3px"> Dalam Proses </p>
                                     @elseif($item->status ==2)
-                                        Diterima
+                                        <p style="background-color: green; width:60%; text-align:center; border-radius: 3px"> Diterima </p>
                                     @else
-                                        Ditolak
+                                        <p style="background-color: red; width:60%; text-align:center; border-radius: 3px"> Ditolak </p>
                                     @endif
                                 
                                 </td>
                                 <td>
                                     <div class="icon" style="display: flex;">
+                                    @if($item->status == 1)
                                         <form action="{{route('perizinanAdmin.edit', $item->id_perizinan)}}" method="GET">
                                             @csrf
                                             @method('GET')
                                             <button class="ri-edit-2-line" type="submit" style="border: none; background:none;"></button>
                                         </form>
-                                      </div>
+                                      
+                                    @else
+                                    @endif
+                                    <form action="{{route('perizinanAdmin.show', $item->id_perizinan)}}" method="GET">
+                                        @csrf
+                                        @method('GET')
+                                        <button class="bi bi-eye-fill" type="submit" style="border: none; background:none;"></button>
+                                    </form>
+                                </div>
                                 </td>
                             </tr>
                         @endforeach

@@ -58,9 +58,17 @@ class PerizinanAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_perizinan)
     {
-        //
+        $perizinan = DB::table('perizinan')
+        ->join('users', 'perizinan.id_profil', '=', 'users.id')
+        ->where('id_perizinan', '=', $id_perizinan )
+        ->select('perizinan.*', 'users.name')
+        ->first();
+        
+        return view('pages.admin.perizinanAdmin.detail', [
+            'perizinan' => $perizinan,
+        ]);
     }
 
     /**
