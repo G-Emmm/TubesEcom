@@ -116,7 +116,7 @@ class PerizinanAdminController extends Controller
                 DB::table('presensi')->insert([
                 'id_profil' => $perizinan->id_profil,
                 'tanggal' => $i,
-                'keterangan' => 'IZIN'
+                'keterangan' => 'Izin'
             ]);
             }
 
