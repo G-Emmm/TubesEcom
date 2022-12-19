@@ -118,12 +118,12 @@
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
 
                                         <a href="/perizinan/create">
-                                            <i class="bi bi-envelope-paper"></i>
+                                            <i class="bi bi-pen"></i>
                                         </a>
                                     </div>
                                     <div class="ps-3">
                                         <a href="/perizinan/create">
-                                            <span class="text-muted pt-2 ps-1">Ajukan Cuti</span>
+                                            <span class="text-muted pt-2 ps-1">Pengajuan Cuti</span>
                                         </a>
                                     </div>
                                 </div>
@@ -132,12 +132,12 @@
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
 
                                         <a href="/perizinan">
-                                            <i class="bi bi-envelope"></i>
+                                            <i class="bi bi-card-checklist"></i>
                                         </a>
                                     </div>
                                     <div class="ps-3">
                                         <a href="/perizinan">
-                                            <span class="text-muted pt-2 ps-1">Daftar Pengajuan Cuti</span>
+                                            <span class="text-muted pt-2 ps-1">Daftar Ajuan Cuti</span>
                                         </a>
                                     </div>
                                 </div>

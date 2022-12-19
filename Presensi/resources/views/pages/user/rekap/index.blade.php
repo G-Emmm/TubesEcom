@@ -4,16 +4,18 @@
     <div class="pagetitle">
         <h1>Daftar Izin</h1>
     </div><!-- End Page Title -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card-body">
-                <h5 class="card-title col text-center">
-                    Kehadiran mencapai {{ round(($total_presensi / $jadwal_presensi) * 100, 2) }}%
-                </h5>
-            </div>
-        </div>
-    </div>
     @if (isset($presensi))
+        @if ($jadwal_presensi > 0)
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card-body">
+                        <h5 class="card-title col text-center">
+                            Kehadiran mencapai {{ round(($total_presensi / $jadwal_presensi) * 100, 2) }}%
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        @endif
         <section class="section dashboard">
             <div class="row">
                 <!-- Left side columns -->

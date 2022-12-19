@@ -10,10 +10,23 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            {{-- <li class="nav-item">
-                <a class="nav-link collapsed" href="/presensi/">
-                    <i class="bi bi-card-checklist"></i><span>Presensi</span><i></i>
-                </a> --}}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/user/rekap">
+                    <i class="bi bi-pie-chart"></i><span>Rekap Presensi</span><i></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/perizinan/create">
+                    <i class="bi bi-pen"></i><span>Pengajuan Cuti</span><i></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/perizinan">
+                    <i class="bi bi-card-checklist"></i><span>Daftar Ajuan Cuti</span><i></i>
+                </a>
+            </li>
 
                 {{-- <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -122,7 +135,7 @@
                 </ul>
             </li><!-- End Forms Nav --> --}}
 
-            {{-- <li class="nav-item">
+                {{-- <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Tenant</span><i></i>
                 </a> --}}
@@ -146,7 +159,7 @@
                 </a> --}}
 
 
-                {{-- <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
